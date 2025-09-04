@@ -4,11 +4,19 @@
 body {
   font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #0f172a;
+  color: #e2e8f0;
 }
 
 /* Custom background shade (gray-850) */
 .bg-gray-850 {
-  background-color: lch(#111827);
+  background-color: #111827;
 }
 
 /* Navbar */
@@ -28,9 +36,16 @@ header nav a:hover {
 .hero-btn {
   box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
   transition: all 0.3s ease;
+  border-radius: 12px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #22d3ee;
+  color: #22d3ee;
+  cursor: pointer;
 }
 .hero-btn:hover {
   box-shadow: 0 0 40px rgba(34, 211, 238, 0.8);
+  background: rgba(34, 211, 238, 0.1);
 }
 
 /* Service Cards */
@@ -42,23 +57,43 @@ header nav a:hover {
   box-shadow: 0 8px 25px rgba(34, 211, 238, 0.3);
 }
 
-/* Portfolio Videos */
+/* ==============================
+   Portfolio Videos
+   ============================== */
 .portfolio-video {
-  transition: transform 1.3s ease;
-}
-.portfolio-video:hover {
-  transform: scale(0.10);
-}
-
-/* Contact form inputs */
-form input, form textarea {
+  border: 2px solid transparent;
+  border-radius: 12px;
   transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-form input:focus, form textarea:focus {
-  box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+  background: #000;
 }
 
-/* Social Links */
+.portfolio-video:hover {
+  border: 2px solid #22d3ee; /* cyan border */
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+}
+
+/* ==============================
+   Contact Form
+   ============================== */
+form input,
+form textarea {
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #374151;
+  background: #1f2937;
+  color: #e5e7eb;
+}
+form input:focus,
+form textarea:focus {
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+  border: 1px solid #22d3ee;
+  outline: none;
+}
+
+/* ==============================
+   Social Links
+   ============================== */
 #contact a {
   transition: color 0.3s ease, transform 0.2s ease;
 }
