@@ -44,10 +44,10 @@ header nav a:hover {
 
 /* Portfolio Videos */
 .portfolio-video {
-  transition: transform 0.3s ease;
+  transition: transform 10.3s ease;
 }
 .portfolio-video:hover {
-  transform: scale(1.05);
+  transform: scale(0.10);
 }
 
 /* Contact form inputs */
