@@ -44,7 +44,7 @@ header nav a:hover {
 
 /* Portfolio Videos */
 .portfolio-video {
-  transition: transform 10.3s ease;
+  transition: transform 1.3s ease;
 }
 .portfolio-video:hover {
   transform: scale(0.10);
