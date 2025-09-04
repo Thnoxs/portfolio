@@ -38,19 +38,30 @@ links.forEach(link => {
 });
 
 // ============================
-// Portfolio Video Hover Effect
+// Portfolio Video Controls (Safe)
 // ============================
 const portfolioVideos = document.querySelectorAll(".portfolio-video");
 
 portfolioVideos.forEach(video => {
-  video.addEventListener("mouseenter", () => {
-    video.muted = false; // hover pe sound chalu
-    video.play().catch(() => {}); // autoplay allow karega
-  });
+  // Sirf desktop (hover works) ke liye enable
+  if (window.innerWidth > 768) {
+    video.addEventListener("mouseenter", () => {
+      video.muted = true; // muted preview
+      video.play().catch(() => {});
+    });
 
-  video.addEventListener("mouseleave", () => {
-    video.muted = true;
-    video.pause();
-    video.currentTime = 0; // reset start se
+    video.addEventListener("mouseleave", () => {
+      video.pause();
+      video.currentTime = 0; // reset start pe
+    });
+  }
+
+  // Mobile fix: koi autoplay/hover nahi, user click karega
+  video.addEventListener("touchstart", () => {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
   });
 });
